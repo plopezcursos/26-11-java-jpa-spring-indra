@@ -1,0 +1,11 @@
+# Metadatos locales del workspace de Eclipse
+.metadata/
+
+# Salida de compilación de Eclipse y Maven
+bin/
+target/
+*.class
+
+# Archivos del sistema operativo
+Thumbs.db
+.DS_Store
