@@ -1,12 +1,14 @@
 package stream;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import lambdas.Persona;
+import stream.auxiliar.Departamento;
+import stream.auxiliar.Empleado;
 
 public class Stream05Collector {
 	public static void main(String[] args) {
@@ -39,5 +41,21 @@ public class Stream05Collector {
 				.map(Persona::getNombre)
 				.collect(Collectors.joining(", "));
 		System.out.println(todosLosNombres);
+		
+		
+		List<Empleado> empleados = Empleado.getEmpleados();
+		//Agrupar empleados por Departamento
+		Map<Departamento, List<Empleado>> empsDpto =
+				empleados.stream()
+				.collect(Collectors.groupingBy(Empleado::getDepartamento));
+		empsDpto.forEach((d, l)->System.out.println(d + "\n\t" + l));
+		
+		//Sumatoria de salarios por Departamento
+		Map<Departamento, Double> salariosPorDpto =
+				empleados.stream()
+				.collect(Collectors
+						.groupingBy(Empleado::getDepartamento,
+								    Collectors.summingDouble(Empleado::getSalario)));
+		salariosPorDpto.forEach((d, s) -> System.out.println(d.getDepartamento() + ": " + s));
 	}
 }
