@@ -1,0 +1,63 @@
+2026-11-12 11:04:23.396812+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]describe persona"; se esperaba "DELETE, DROP"
+Syntax error in SQL statement "[*]describe persona"; expected "DELETE, DROP"; SQL statement:
+describe persona [42001-252]
+2026-11-12 11:19:43.219638+01:00 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/cursos/2026-11-java-jpa-spring-indra/ws-2611-java-spring-indra/j03-jpa/datos/curso_jpa.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/cursos/2026-11-java-jpa-spring-indra/ws-2611-java-spring-indra/j03-jpa/datos/curso_jpa.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:123)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1693)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:521)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:298)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2193)
+	at org.h2.mvstore.db.Store.<init>(Store.java:140)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:38)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:59)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProvider.buildPool(DriverManagerConnectionProvider.java:130)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProvider.configure(DriverManagerConnectionProvider.java:87)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:139)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:244)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212)
+	at org.hibernate.service.ServiceRegistry.requireService(ServiceRegistry.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:487)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:353)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:180)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1388)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1450)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:59)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:90)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:66)
+	at es.kolbit.jpa.persistenceutil.Emf.get(Emf.java:14)
+	at es.kolbit.jpa.ej01_mismosnombres.Test01.main(Test01.java:9)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/cursos/2026-11-java-jpa-spring-indra/ws-2611-java-spring-indra/j03-jpa/datos/curso_jpa.mv.db [2.5.252/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/cursos/2026-11-java-jpa-spring-indra/ws-2611-java-spring-indra/j03-jpa/datos/curso_jpa.mv.db [2.5.252/7]" [50000-252]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 44 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/cursos/2026-11-java-jpa-spring-indra/ws-2611-java-spring-indra/j03-jpa/datos/curso_jpa.mv.db [2.5.252/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:998)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:293)
+	... 38 more
