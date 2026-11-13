@@ -14,6 +14,22 @@
         <class>es.kolbit.jpa.ej03_pk_compuesta.Persona03b</class>
         <class>es.kolbit.jpa.ej04_insertable.Persona04</class>
         <class>es.kolbit.jpa.ej05_tipoacceso.Persona05</class>
+        <class>es.kolbit.jpa.ej06_herencia_single.Figura</class>
+        <class>es.kolbit.jpa.ej06_herencia_single.Rectangulo</class>
+        <class>es.kolbit.jpa.ej06_herencia_single.Circulo</class>
+        <class>es.kolbit.jpa.ej07_herencia_joined.Figura2</class>
+        <class>es.kolbit.jpa.ej07_herencia_joined.Rectangulo2</class>
+        <class>es.kolbit.jpa.ej07_herencia_joined.Circulo2</class>
+        <class>es.kolbit.jpa.ej08_unoauno.Contacto</class>
+        <class>es.kolbit.jpa.ej08_unoauno.DomicilioContacto</class>
+        <class>es.kolbit.jpa.ej08_unoauno.Contacto2</class>
+        <class>es.kolbit.jpa.ej08_unoauno.DomicilioContacto2</class>
+        <class>es.kolbit.jpa.ej10_muchosauno.Partido</class>
+        <class>es.kolbit.jpa.ej10_muchosauno.Campo</class>
+        <class>es.kolbit.jpa.ej10_muchosauno.Partido2</class>
+        <class>es.kolbit.jpa.ej10_muchosauno.Campo2</class>
+        <class>es.kolbit.jpa.ej12.muchosamuchos.Equipo</class>
+        <class>es.kolbit.jpa.ej12.muchosamuchos.Jugador</class>
 
         <properties>
 			<property name="hibernate.show_sql" value="true" />

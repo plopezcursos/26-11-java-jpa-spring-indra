@@ -1,0 +1,105 @@
+package es.kolbit.jpa.ej08_unoauno;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "domicilio")
+public class DomicilioContacto implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "iddomicilio")
+	private Integer idDomicilio;
+	
+	@Column(name = "tipovia")
+	private String tipoVia;
+	
+	private String via;
+	private int numero;
+	private int piso;
+	private String puerta;
+	private String ciudad;
+	
+	public DomicilioContacto() {}
+
+	public DomicilioContacto(String tipoVia, String via, int numero, int piso, String puerta, String ciudad) {
+		this.tipoVia = tipoVia;
+		this.via = via;
+		this.numero = numero;
+		this.piso = piso;
+		this.puerta = puerta;
+		this.ciudad = ciudad;
+	}
+
+	public Integer getIdDomicilio() {
+		return idDomicilio;
+	}
+
+	public void setIdDomicilio(Integer idDomicilio) {
+		this.idDomicilio = idDomicilio;
+	}
+
+	public String getTipoVia() {
+		return tipoVia;
+	}
+
+	public void setTipoVia(String tipoVia) {
+		this.tipoVia = tipoVia;
+	}
+
+	public String getVia() {
+		return via;
+	}
+
+	public void setVia(String via) {
+		this.via = via;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public int getPiso() {
+		return piso;
+	}
+
+	public void setPiso(int piso) {
+		this.piso = piso;
+	}
+
+	public String getPuerta() {
+		return puerta;
+	}
+
+	public void setPuerta(String puerta) {
+		this.puerta = puerta;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	@Override
+	public String toString() {
+		return "Domicilio (" + tipoVia + ", " + via + ", " + numero + ", " + piso + ", " + puerta + ", "
+				+ ", " + ciudad + ")";
+	}
+
+}
+
