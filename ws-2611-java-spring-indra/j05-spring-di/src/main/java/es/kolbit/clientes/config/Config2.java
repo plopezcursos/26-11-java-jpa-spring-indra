@@ -21,7 +21,7 @@ public class Config2 {
 	}
 	
 	@Bean
-	ClienteDao clienteDaoAternativo() {
+	ClienteDao clienteDaoAlternativo() {
 		return new ClienteDaoAlternativo();
 	}
 	
@@ -30,7 +30,7 @@ public class Config2 {
 	
 	
 	@Bean
-	ClienteService clienteService(@Qualifier("clienteDaoAternativo") ClienteDao cDao) {
+	ClienteService clienteService(@Qualifier("clienteDaoAlternativo") ClienteDao cDao) {
 		return new ClienteService(cDao);
 	}
 	

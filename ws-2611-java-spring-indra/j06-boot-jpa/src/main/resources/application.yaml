@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: j06-boot-jpa
+  datasource:
+    url: jdbc:h2:file:./datos/clientes;DB_CLOSE_DELAY=-1
+    username: sa
+app:
+  h2:
+    web:
+      enabled: true

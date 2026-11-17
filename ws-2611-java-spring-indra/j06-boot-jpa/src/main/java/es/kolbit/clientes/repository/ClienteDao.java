@@ -1,0 +1,16 @@
+package es.kolbit.clientes.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import es.kolbit.clientes.domain.Cliente;
+import es.kolbit.clientes.domain.ClienteDto;
+
+public interface ClienteDao {
+	
+    Optional<ClienteDto> findById(long id);
+    
+    List<ClienteDto> findAll();
+    
+    Optional<Cliente> findClienteById(long id);
+}
