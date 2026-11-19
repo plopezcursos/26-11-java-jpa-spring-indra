@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: j07-boot-springdata-mdp
+  datasource:
+    url: jdbc:h2:file:./datos/mdp;DB_CLOSE_DELAY=-1
+    username: sa
+app:
+  h2:
+    web:
+      enabled: false

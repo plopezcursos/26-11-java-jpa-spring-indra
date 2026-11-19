@@ -5,7 +5,6 @@ import java.util.List;
 import es.kolbit.mdp.domain.Tarjeta;
 
 public interface TarjetaRepoCustom {
-
 	
 	List<Tarjeta> findVigentes();
 }

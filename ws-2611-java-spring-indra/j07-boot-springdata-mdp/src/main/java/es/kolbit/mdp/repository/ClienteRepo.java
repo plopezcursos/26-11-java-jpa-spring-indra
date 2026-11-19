@@ -3,6 +3,8 @@ package es.kolbit.mdp.repository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,7 +17,6 @@ import es.kolbit.mdp.dto.ClienteDto;
 public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
 
 	//Declared Query Method
-	
 	@Query(
 		"""
 		select c from Cliente c
@@ -25,6 +26,7 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
 		"""
 		)
 	public List<Cliente> findClienteNombreCompleto(String nombre);
+
 	
 	// Derived Query Method
 	public List<Cliente> findByApellido1(String ape);
@@ -41,6 +43,7 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
 		"""
 	)
 	public List<ClienteDto> findDto();
+
 	
 	//DTO Query
 	@Query(
@@ -52,6 +55,7 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
 		"""
 	)
 	public List<ClienteDto> findDtoByMunicipio(@Param("municipio") String municipio);
+	
 	
 //	@Override
 //	@Query(
@@ -69,8 +73,14 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
 	@EntityGraph(attributePaths = {"cuentas.tarjetas"})
 	Optional<Cliente> findById(Integer id);
 	
-//	@Override
-//	default List<Cliente> findAll() {
-//		return null;
-//	}
+	//Paginación - con parámetros opcionales
+	@Query(
+		"""
+		select c from Cliente c
+		where (:prov is null or lower(:prov) = lower(c.provincia))
+			and (:ape is null or lower(:ape) like lower(concat('%', :ape, '%')))
+		"""
+	)
+	Page<Cliente> findByProvinciaAndNombre(
+			@Param("prov") String provincia, @Param("ape") String apllido, Pageable p);
 }
